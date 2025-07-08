@@ -3,22 +3,28 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  font-family: 'Open Sans', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 15px;
   background: 
     linear-gradient(135deg, rgba(0, 170, 255, 0.705), rgba(255, 255, 255, 0.705)),
     url(https://derechadiario.com.ar/filesedc/uploads/image/post/peso-argentino-historia-1140x570-1_1200_800.webp) no-repeat center center fixed;
   background-size: cover;
   color: #1a2a3a;
-  margin: 0 auto;
-  max-width: 600px;
-  padding: 20px 15px;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+}
+
+body > *:not(.footer) {
+  flex: 1 0 auto;
 }
 
 h1 {
@@ -183,28 +189,19 @@ button:focus {
 }
 
 
-/*Diseño responsive*/
-@media (max-width: 640px) {
-  body {
-    padding: 15px 10px;
-    max-width: 100%;
-  }
 
-  form, #resultadoPrestamo {
+/*Diseño responsive*/
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
     max-width: 100%;
-    padding: 1.2rem 1rem;
   }
 
   h1 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
-  p {
-    font-size: 1rem;
-  }
-
-  button {
-    font-size: 1rem;
-    padding: 0.65rem 0;
+  .form-group {
+    margin-bottom: 1rem;
   }
 }
